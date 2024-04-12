@@ -12,7 +12,7 @@ function pushExample(arr, element) {
   arr.push(element);
   console.log("After push:", arr);
 }
-pushExample([1, 2, 3], 4);
+pushExample([1, 2, 3], 4); // [1, 2, 3, 4]
 
 // pop()
 function popExample(arr) {
@@ -21,7 +21,7 @@ function popExample(arr) {
   arr.pop();
   console.log("After pop:", arr);
 }
-popExample([1, 2, 3]);
+popExample([1, 2, 3]); // [1, 2]
 
 // shift()
 function shiftExample(arr) {
@@ -30,7 +30,7 @@ function shiftExample(arr) {
   arr.shift();
   console.log("After shift:", arr);
 }
-shiftExample([1, 2, 3]);
+shiftExample([1, 2, 3]); // [2, 3]
 
 // unshift()
 function unshiftExample(arr, element) {
@@ -39,7 +39,7 @@ function unshiftExample(arr, element) {
   arr.unshift(element);
   console.log("After unshift:", arr);
 }
-unshiftExample([1, 2, 3], 0);
+unshiftExample([1, 2, 3], 0); // [0, 1, 2, 3]
 
 // concat()
 function concatExample(arr1, arr2) {
@@ -48,7 +48,7 @@ function concatExample(arr1, arr2) {
   let arr3 = arr1.concat(arr2);
   console.log("After concat:", arr3);
 }
-concatExample([1, 2, 3], [4, 5, 6]);
+concatExample([1, 2, 3], [4, 5, 6]); // [1, 2, 3, 4, 5, 6]
 
 // forEach()
 function forEachExample(arr) {
@@ -58,7 +58,7 @@ function forEachExample(arr) {
     console.log(item, index);
   });
 }
-forEachExample([1, 2, 3]);
+forEachExample([1, 2, 3]); // 1 0, 2 1, 3 2
 
 // map()
 function mapExample(arr) {
@@ -69,7 +69,7 @@ function mapExample(arr) {
   });
   console.log("After map:", newArr);
 }
-mapExample([1, 2, 3]);
+mapExample([1, 2, 3]); // [2, 4, 6]
 
 // filter()
 function filterExample(arr) {
@@ -80,7 +80,7 @@ function filterExample(arr) {
   });
   console.log("After filter:", newArr);
 }
-filterExample([1, 2, 3, 4, 5]);
+filterExample([1, 2, 3, 4, 5]); // [4, 5]
 
 // find()
 function findExample(arr) {
@@ -91,7 +91,7 @@ function findExample(arr) {
   });
   console.log("After find:", found);
 }
-findExample([1, 2, 3, 4, 5]);
+findExample([1, 2, 3, 4, 5]); // 4
 
 // sort()
 function sortExample(arr) {
@@ -102,4 +102,4 @@ function sortExample(arr) {
   });
   console.log("After sort:", arr);
 }
-sortExample([5, 2, 3, 4, 1]);
+sortExample([5, 2, 3, 4, 1]); // [1, 2, 3, 4, 5]

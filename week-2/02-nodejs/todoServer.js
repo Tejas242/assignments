@@ -39,11 +39,58 @@
 
   Testing the server - run `npm run test-todoServer` command in terminal
  */
-  const express = require('express');
-  const bodyParser = require('body-parser');
-  
-  const app = express();
-  
-  app.use(bodyParser.json());
-  
-  module.exports = app;
+const express = require("express");
+const bodyParser = require("body-parser");
+
+const app = express();
+
+app.use(bodyParser.json());
+
+const todos = [];
+
+app.get("/todos", (req, res) => {
+  res.status(200).json(todos);
+});
+
+app.get("/todos/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const todo = todos.find((todo) => todo.id === id);
+  if (todo) {
+    res.status(200).json(todo);
+  }
+  res.status(404).send("Not found");
+});
+
+app.post("/todos", (req, res) => {
+  const { title, description } = req.body;
+  const todo = {
+    id: todos.length + 1,
+    title,
+    description,
+    completed: false,
+  };
+
+  todos.push(todo);
+
+  res.status(201).json({ id: todo.id });
+});
+
+app.put("/todos/:id", (req, res) => {
+  const todoId = parseInt(req.params.id);
+  const { title, description, completed } = req.body;
+
+  const todo = todos.find((todo) => todo.id === todoId);
+
+  if (todo) {
+    todo.title = title;
+    todo.description = description;
+    todo.completed = completed;
+    res.status(200).send("Updated");
+  } else {
+    res.status(404).send("Not found");
+  }
+});
+
+app.delete('')
+
+module.exports = app;

@@ -5,9 +5,9 @@ function explainParseInt(value) {
 }
 
 // Example Usage for parseInt
-explainParseInt("42");
-explainParseInt("42px");
-explainParseInt("3.14");
+explainParseInt("42"); // 42
+explainParseInt("42px"); // 42
+explainParseInt("3.14"); // 3
 
 function explainParseFloat(value) {
   console.log("Original Value:", value);
@@ -16,6 +16,6 @@ function explainParseFloat(value) {
 }
 
 // Example Usage for parseFloat
-explainParseFloat("3.14");
-explainParseFloat("42");
-explainParseFloat("42px");
+explainParseFloat("3.14"); // 3.14
+explainParseFloat("42"); // 42
+explainParseFloat("42px"); // 42
